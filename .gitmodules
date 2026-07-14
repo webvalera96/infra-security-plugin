@@ -1,0 +1,3 @@
+[submodule "infra-products-security-lsp-server"]
+	path = infra-products-security-lsp-server
+	url = git@github.com:webvalera96/infra-products-security-lsp-server.git
