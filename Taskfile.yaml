@@ -4,3 +4,12 @@ includes:
   lsp:
     dir: infra-products-security-lsp-server
     taskfile: ./infra-products-security-lsp-server
+
+
+tasks:
+  run:
+    desc: run plugin with ide
+    vars:
+      IPS_PATH: /home/veto/src/plugins/idea/infra-security-plugin/infra-products-security-lsp-server/target/debug/minimal-lsp
+    cmds:
+      - IPS_PATH={{.IPS_PATH}} sh ./gradlew runIde
