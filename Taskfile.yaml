@@ -1,0 +1,6 @@
+version: "3"
+
+includes:
+  lsp:
+    dir: infra-products-security-lsp-server
+    taskfile: ./infra-products-security-lsp-server
