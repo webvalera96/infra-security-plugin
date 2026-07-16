@@ -42,13 +42,12 @@ private class InfraProductsSecurityLspServerDescriptor(project: Project) : Proje
     // Find path to binary, where lsp server exist
     private fun findBinary(): String {
         LOG.info("IPS_PATH env: ${System.getenv("IPS_PATH")}")
-        // If IPS_PATH defined
-        System.getenv("IPS_PATH")?.let {
-//            path -> if (File(path).exists()) return path
-            path -> return path
+        // If IPS_PATH defined and file exists, use it
+        System.getenv("IPS_PATH")?.let { path ->
+            if (File(path).exists()) return path
         }
 
-        // set ips binary
+        // fallback to ips binary on PATH
         return "ips"
     }
 }
